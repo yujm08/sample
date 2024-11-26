@@ -4,9 +4,7 @@
 <%@page import="com.springbook.biz.board.impl.BoardDAO" %>
 <%@page import="com.springbook.biz.board.BoardVO" %>
 <%
-    BoardVO vo = new BoardVO();
-	BoardDAO boardDAO = new BoardDAO();
-	List<BoardVO> boardList = boardDAO.getBoardList(vo);  
+	List<BoardVO> boardList = (List) session.getAttribute("boardList");
 %>
 <!DOCTYPE html>
 <html>
@@ -31,7 +29,7 @@
 	<% for(BoardVO board : boardList) { %>
 	<tr>
 	  <td><%= board.getSeq() %></td>
-	  <td align="left"><a href="getBoard.jsp?seq=<%= board.getSeq() %>">
+	  <td align="left"><a href="getBoard.do?seq=<%= board.getSeq() %>">
 	  <%= board.getTitle() %></a></td>
 	  <td><%= board.getWriter() %></td>
 	  <td><%= board.getRegDate() %></td>
