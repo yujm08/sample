@@ -37,7 +37,7 @@ public class DispatcherServlet extends HttpServlet {
 			if( user != null){
 				response.sendRedirect("getBoardList.do");
 			}else{
-				response.sendRedirect("login.do");
+				response.sendRedirect("login.jsp");
 			}
 
 		}else if(path.equals("/logout.do")) {
@@ -96,7 +96,7 @@ public class DispatcherServlet extends HttpServlet {
 
 			response.sendRedirect("getBoardList.do");
 			
-		}else if(path.equals("logout.do")) {
+		}else if(path.equals("/getBoard.do")) {
 			System.out.println("글 상세보기 처리");
 
 			String seq =  request.getParameter("seq");
@@ -109,7 +109,7 @@ public class DispatcherServlet extends HttpServlet {
 
 			HttpSession session = request.getSession();
 			session.setAttribute("board", board);
-			response.sendRedirect("getBoard.do");
+			response.sendRedirect("getBoard.jsp");
 
 		}else if(path.equals("/getBoardList.do")) {
 			System.out.println("글 목록 보기 처리");
@@ -120,7 +120,7 @@ public class DispatcherServlet extends HttpServlet {
 
 			HttpSession session = request.getSession();
 			session.setAttribute("boardList", boardList);
-			response.sendRedirect("getBoardList.do");
+			response.sendRedirect("getBoardList.jsp");
 
 		}
 	}

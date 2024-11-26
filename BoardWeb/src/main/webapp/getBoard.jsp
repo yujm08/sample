@@ -3,9 +3,7 @@
 <%@page import="com.springbook.biz.board.impl.BoardDAO" %>    
 <%@page import="com.springbook.biz.board.BoardVO" %>    
 <%
-
 BoardVO board = (BoardVO) session.getAttribute("board");
-
 %>
 <!DOCTYPE html>
 <html>
@@ -20,7 +18,8 @@ BoardVO board = (BoardVO) session.getAttribute("board");
 <a href=logout_proc.jsp">로그아웃</a>
 <hr>
 
-<form action="updateBoard_proc.jsp" method="post">
+<form action="updateBoard.do" method="post">
+<input name = "seq" type = "hidden" value = "<%= board.getSeq() %>>">
 <table border="1" cellpadding="0" cellspacing="0">
 <tr>
 	<td bgcolor="orange" width="70">제목</td>
@@ -53,7 +52,7 @@ BoardVO board = (BoardVO) session.getAttribute("board");
 </form>
 
 <a href="insertBoard.jsp">글 등록</a>&nbsp&nbsp&nbsp;
-<a href="deleteBoard_proc.do?seq=<%=board.getSeq()%>">글 삭제</a>&nbsp&nbsp&nbsp;
+<a href="deleteBoard.do?seq=<%=board.getSeq()%>">글 삭제</a>&nbsp&nbsp&nbsp;
 <a href="getBoardList.jsp">글 목록</a>
 
 </center>
