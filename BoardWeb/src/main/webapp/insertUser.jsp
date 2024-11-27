@@ -22,12 +22,12 @@
 
 <tr>
 	<td bgcolor = "orange">비밀번호</td>
-	<td><input type = "password" name = "password1"></td>
+	<td><input type = "text" name = "password1"></td>
 </tr>
 
 <tr>
 	<td bgcolor = "orange">비밀번호 확인</td>
-	<td><input type = "password" name = "password2"></td>
+	<td><input type = "text" name = "password2"></td>
 </tr>
 
 <tr>
