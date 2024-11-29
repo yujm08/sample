@@ -1,10 +1,5 @@
-<%@page import="com.springbook.biz.board.impl.BoardDAO"%>
-<%@page import="com.springbook.biz.board.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<%
-	BoardVO board = (BoardVO) session.getAttribute("board");
-%>
     
 <!DOCTYPE html>
 <html>
@@ -18,31 +13,31 @@
 <h3><a href = "logout.do">로그아웃</a></h3>
 
 <form action = "updateBoard.do" method = "post">
-<input name = "seq" type = "hidden" value = "<%= board.getSeq()%>">
+<input name = "seq" type = "hidden" value = "${board.seq}">
 <table border = "1" cellpading = "0" cellspacing = "0">
 <tr>
 	<td bgcolor = "orange">제목</td>
-	<td align = "left"><input type = "text" name = "title" value = "<%= board.getTitle()%>"></td>
+	<td align = "left"><input type = "text" name = "title" value = "${board.title}"></td>
 </tr>
 
 <tr>
 	<td bgcolor = "orange">작성자</td>
-	<td align = "left"><%= board.getWriter()%></td>
+	<td align = "left">${board.writer}</td>
 </tr>
 
 <tr>
 	<td bgcolor = "orange">내용</td>
-	<td align = "left"><textarea rows = "10" cols = "40" name = "content"><%= board.getContent()%></textarea></td>
+	<td align = "left"><textarea rows = "10" cols = "40" name = "content">${board.content}</textarea></td>
 </tr>
 
 <tr>
 	<td bgcolor = "orange">작성자</td>
-	<td align = "left"><%= board.getRegDate()%></td>
+	<td align = "left">${board.regDate}</td>
 </tr>
 
 <tr>
 	<td bgcolor = "orange">조회수</td>
-	<td align = "left"><%= board.getCnt()%></td>
+	<td align = "left">${board.cnt}</td>
 </tr>
 
 <tr>
@@ -55,7 +50,7 @@
 <br>
 
 <a href = "insertBoard.jsp">글 등록</a>&nbsp&nbsp&nbsp;
-<a href = "deleteBoard.do?seq=<%= board.getSeq()%>">글 삭제</a>&nbsp&nbsp&nbsp;
+<a href = "deleteBoard.do?seq=${board.seq}">글 삭제</a>&nbsp&nbsp&nbsp;
 <a href = "getBoardList.do">글 목록</a>
 
 </center>
