@@ -1,39 +1,25 @@
 package com.springbook.biz.controller.user;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
-
-import com.springbook.biz.board.BoardVO;
 import com.springbook.biz.user.UserVO;
 import com.springbook.biz.user.impl.UserDAO;
 
-public class LoginController implements Controller{
+@Controller
+public class LoginController {
 	
-	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse respone) {
+	@RequestMapping("/login.do")
+	public String login(UserVO vo, UserDAO userDAO) {
 		
 		System.out.println("로그인 처리");
 		
-		String id = request.getParameter("id");
-		String password = request.getParameter("password");
-		
-		UserVO vo = new UserVO();
-		vo.setId(id);
-		vo.setPassword(password);
-		
-		UserDAO userDAO = new UserDAO();
 		UserVO user = userDAO.getUser(vo);
 		
-		ModelAndView mav = new ModelAndView();
-		
 		if(user != null) {
-			mav.setViewName("getBoardList.do");
+			return "redirect:getBoardList.do";
 		}else {
-			mav.setViewName("login.jsp");
+			return "redirect:login.jsp";
 		}
-		
-		return mav;
 	}
 }
