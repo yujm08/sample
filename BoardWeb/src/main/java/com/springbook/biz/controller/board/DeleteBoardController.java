@@ -14,8 +14,6 @@ public class DeleteBoardController {
 		
 		System.out.println("글 삭제 처리");
 		
-		System.out.println("삭제할 글 번호: " + vo.getSeq() + 1);
-		
 		boardDAO.deleteBoard(vo);
 		return "redirect:getBoardList.do";
 	}
