@@ -15,21 +15,22 @@ public class UpdateBoardController implements Controller{
 
 
 		System.out.println("글 수정 처리");
-
+		
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		String seq = request.getParameter("seq");
-
+		
 		BoardVO vo = new BoardVO();
 		vo.setTitle(title);
 		vo.setContent(content);
 		vo.setSeq(Integer.parseInt(seq));
-
+		
 		BoardDAO boardDAO = new BoardDAO();
 		boardDAO.updateBoard(vo);
-
+		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("getBoardList.do");
+		
 		return mav;
 	}
 }

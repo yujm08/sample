@@ -17,17 +17,16 @@ public class GetBoardController implements Controller{
 		System.out.println("상세 보기 처리");
 		
 		String seq = request.getParameter("seq");
-
+		
 		BoardVO vo = new BoardVO();
 		vo.setSeq(Integer.parseInt(seq));
 		
 		BoardDAO boardDAO = new BoardDAO();
-		BoardVO board = boardDAO.getBoard(vo);
+		BoardVO Board = boardDAO.getBoard(vo);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("board", board);
+		mav.addObject("Board", Board);
 		mav.setViewName("getBoard.jsp");
-		
 		return mav;
 	}
 

@@ -15,6 +15,8 @@ public class GetBoardListController implements Controller{
 
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
 		
+		System.out.println("글 목록 보기 처리");
+		
 		BoardVO vo = new BoardVO();
 		BoardDAO boardDAO = new BoardDAO();
 		List<BoardVO> boardList = boardDAO.getBoardList(vo);

@@ -31,7 +31,7 @@
 </tr>
 
 <tr>
-	<td bgcolor = "orange">작성자</td>
+	<td bgcolor = "orange">작성일</td>
 	<td align = "left">${board.regDate}</td>
 </tr>
 

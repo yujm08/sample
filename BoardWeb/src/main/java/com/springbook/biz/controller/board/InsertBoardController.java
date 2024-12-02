@@ -13,30 +13,24 @@ public class InsertBoardController implements Controller{
 
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
 		
-		try {
-			request.setCharacterEncoding("EUC-KR"); // 요청 인코딩 설정
-			response.setCharacterEncoding("EUC-KR"); // 응답 인코딩 설정
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 		
 		System.out.println("글 등록 처리");
 		
 		String title = request.getParameter("title");
-		String writer = request.getParameter("writer");
 		String content = request.getParameter("content");
+		String seq = request.getParameter("seq");
 		
 		BoardVO vo = new BoardVO();
 		vo.setTitle(title);
-		vo.setWriter(writer);
 		vo.setContent(content);
+		vo.setSeq(Integer.parseInt(seq));
 		
 		BoardDAO boardDAO = new BoardDAO();
 		boardDAO.insertBoard(vo);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("getBoardList.do");
+		mav.setViewName("getboardList.do");
+		
 		return mav;
 	}
-
 }
