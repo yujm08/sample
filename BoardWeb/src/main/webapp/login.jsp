@@ -1,35 +1,38 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>๋ก๊ทธ์ธ</title>
+<meta charset="EUC-KR">
+<title>ทฮฑืภฮ</title>
 </head>
 <body>
 <center>
-	<h1>๋ก๊ทธ์ธ</h1>
-	<hr>
-	
-	<form action="login.do" method="post">
-	<table border="1" cellpadding = "0" cellpadding = "0">
-		<tr>
-		<td bgcolor="orange">์•์ด๋””</td>
-		<td><input type = "text" name = "id"></td>
-		</tr>
-		
-		<tr>
-		<td bgcolor="orange">๋น๋ฐ€๋ฒํธ</td>
-		<td><input type = "text" name = "password"></td>
-		</tr>
-		
-		<tr>
-		<td colspan="2" align="center">
-		<input type = "submit" value = "๋ก๊ทธ์ธ"></td>
-		</tr>
-		
-	</table>
-	</form>
+
+<h1>ทฮฑืภฮ</h1>
+<hr>
+
+<form action="login.do" method="post">
+<table border="1" cellpading="0" cellspace="0">
+
+<tr>
+	<td bgcolor = "orange">พฦภฬต๐</td>
+	<td><input type="text" name="id"></td>
+</tr>
+
+<tr>
+	<td bgcolor = "orange">บ๑นะน๘ศฃ</td>
+	<td><input type="text" name="password"></td>
+</tr>
+
+<tr>
+	<td colspan="2" align="center">
+	<input type="submit" value="ทฮฑืภฮ"></td>
+</tr>
+
+</table>
+</form>
+
 </center>
 </body>
 </html>
